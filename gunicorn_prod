@@ -1,0 +1,22 @@
+#!/bin/bash
+
+NAME="graceful_restart"
+DIR=/home/ubuntu/graceful_restart
+WORKERS=2
+BIND=127.0.0.1:8000
+DJANGO_SETTINGS_MODULE=graceful_restart.settings
+DJANGO_WSGI_MODULE=graceful_restart.wsgi
+LOG_LEVEL=info
+
+cd $DIR
+source /home/ubuntu/python-virtualenvs/graceful_restart/bin/activate
+
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+
+exec gunicorn ${DJANGO_WSGI_MODULE}:application \
+  --name $NAME \
+  --workers $WORKERS \
+  --bind=$BIND \
+  --log-level=$LOG_LEVEL \
+  --log-file=-
+

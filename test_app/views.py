@@ -5,5 +5,5 @@ from .models import Count
 # Create your views here.
 
 def test(request):
-    Count.objects.create(cnt=1)
+    Count.objects.create(cnt=2)
     return HttpResponse(f'Hello')
