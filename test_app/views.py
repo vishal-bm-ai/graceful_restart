@@ -7,6 +7,6 @@ import time
 def test(request):
     for i in range(120):
         print(i)
-        Count.objects.create(cnt=4)
-	    time.sleep(1)
+        Count.objects.create(cnt=i)
+        time.sleep(1)
     return HttpResponse(f'Hello')
