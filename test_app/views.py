@@ -8,5 +8,5 @@ def test(request):
     for i in range(120):
         print(i)
         Count.objects.create(cnt=i)
-        time.sleep(1)
+        time.sleep(0.5)
     return HttpResponse(f'Hello')
