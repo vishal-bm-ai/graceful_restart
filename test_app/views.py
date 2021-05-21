@@ -10,6 +10,6 @@ def test(request):
         time.sleep(0.5)
     return HttpResponse(f'Hello')
 
-def test(request):
+def dummy(request):
     print("dummy called")
     return HttpResponse(f'Dummy called')
