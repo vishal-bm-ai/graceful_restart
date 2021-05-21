@@ -6,7 +6,10 @@ import time
 
 def test(request):
     for i in range(120):
-        print(i)
         Count.objects.create(cnt=i)
         time.sleep(0.5)
     return HttpResponse(f'Hello')
+
+def test(request):
+    print("dummy called")
+    return HttpResponse(f'Dummy called')
