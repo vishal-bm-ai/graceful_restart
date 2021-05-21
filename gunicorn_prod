@@ -3,7 +3,7 @@
 NAME="graceful_restart"
 DIR=/home/ubuntu/graceful_restart
 WORKERS=2
-BIND=127.0.0.1:8000
+BIND=unix:/home/ubuntu/run/gunicorn.sock
 DJANGO_SETTINGS_MODULE=graceful_restart.settings
 DJANGO_WSGI_MODULE=graceful_restart.wsgi
 LOG_LEVEL=info
